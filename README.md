@@ -1,0 +1,6 @@
+This project is a multithreaded task scheduler implemented in C++ that executes tasks based on their priority levels. Tasks with a lower priority number (starting from 1 as the highest priority) are executed first. It uses a thread-safe priority queue to manage task ordering and a pool of worker threads to process tasks concurrently. Synchronization between threads is handled using `std::mutex` and `std::condition_variable` to ensure thread safety, especially when accessing or modifying the shared task queue.
+
+The scheduler supports clean shutdowns, allowing all running threads to finish executing before the program terminates. To provide clear and non-overlapping console output in a multithreaded environment, all `std::cout` statements are wrapped with a mutex, ensuring one thread prints at a time. This makes the output easy to read and accurately reflects the order and thread responsible for each task.
+
+This project was developed using standard C++17 libraries and is cross-platform compatible. It serves as a great introduction to multithreaded programming concepts such as thread lifecycle management, safe resource access, race condition prevention, and condition-based synchronization. The scheduler is suitable for students and professionals who want to understand how to implement concurrent systems or build a basic task processing framework in C++.
+
